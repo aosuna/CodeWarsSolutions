@@ -226,3 +226,101 @@ The Morse code table is preloaded for you as a dictionary, feel free to use it. 
 All the test strings would contain valid Morse code, so you may skip checking for errors and exceptions. In C#, tests will fail if the solution code throws an exception, please keep that in mind. This is mostly because otherwise the engine would simply ignore the tests, resulting in a "valid" solution.
 
 ___
+
+## String incrementer -- stringinc.js
+
+Your job is to write a function which increments a string, to create a new string. If the string already ends with a number, the number should be incremented by 1. If the string does not end with a number the number 1 should be appended to the new string.
+
+Examples:
+```
+foo->foo1
+
+foobar23 -> foobar24
+
+foo0042 -> foo0043
+
+foo9 -> foo10
+
+foo099 -> foo100
+```
+Attention: If the number has leading zeros the amount of digits should be considered.
+
+___
+
+## Sum of Digits / Digital Root -- digitalroot.js
+
+In this kata, you must create a `digital root` function.
+
+A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has two digits, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
+
+Example(s): 
+
+```javascript
+digital_root(16)
+=> 1 + 6
+=> 7
+
+digital_root(942)
+=> 9 + 4 + 2
+=> 15 ...
+=> 1 + 5
+=> 6
+
+digital_root(132189)
+=> 1 + 3 + 2 + 1 + 8 + 9
+=> 24 ...
+=> 2 + 4
+=> 6
+
+digital_root(493193)
+=> 4 + 9 + 3 + 1 + 9 + 3
+=> 29 ...
+=> 2 + 9
+=> 11 ...
+=> 1 + 1
+=> 2
+```
+
+___
+
+## Strings Mix -- strmix.js
+
+Given two strings `s1` and `s2`, we want to visualize how different the two strings are. We will only take into account the *lowercase* letters (a to z). First let us count the frequency of each lowercase letters in `s1` and `s2`.
+
+```
+s1 = "A aaaa bb c"
+
+s2 = "& aaa bbb c d"
+
+s1 has 4 'a', 2 'b', 1 'c'
+
+s2 has 3 'a', 3 'b', 1 'c', 1 'd'
+```
+
+So the maximum for `'a'` in `s1` and `s2` is `4` from `s1`; the maximum for `'b'` is `3` from `s2`. In the following we will not consider letters when the maximum of their occurrences is less than or equal to 1.
+
+We can resume the differences between `s1` and `s2` in the following string: `"1:aaaa/2:bbb"` where `1` in `1:aaaa` stands for string s1 and `aaaa` because the maximum for a is `4`. In the same manner `2:bbb` stands for string `s2` and `bbb` because the maximum for `b` is `3`.
+
+The task is to produce a string in which each *lowercase letters* of `s1` or `s2` appears as many times as its maximum if this maximum is *strictly* greater than `1`; these letters will be prefixed by the number of the string where they appear with their maximum value and `:`. If the maximum is in `s1` as well as in `s2` the prefix is `=:`.
+
+Examples:
+```javascript
+s1 = "my&friend&Paul has heavy hats! &"
+s2 = "my friend John has many many friends &"
+mix(s1, s2) --> "2:nnnnn/1:aaaa/1:hhh/2:mmm/2:yyy/2:dd/2:ff/2:ii/2:rr/=:ee/=:ss"
+
+s1 = "mmmmm m nnnnn y&friend&Paul has heavy hats! &"
+s2 = "my frie n d Joh n has ma n y ma n y frie n ds n&"
+mix(s1, s2) --> "1:mmmmmm/=:nnnnnn/1:aaaa/1:hhh/2:yyy/2:dd/2:ff/2:ii/2:rr/=:ee/=:ss"
+
+s1="Are the kids at home? aaaaa fffff"
+s2="Yes they are here! aaaaa fffff"
+mix(s1, s2) --> "=:aaaaaa/2:eeeee/=:fffff/1:tt/2:rr/=:hh"
+
+
+s1 = "mmmmm m nnnnn y&friend&Paul has heavy hats! &"
+s2 = "my frie n d Joh n has ma n y ma n y frie n ds n&"
+mix(s1, s2) --> "1:mmmmmm/=:nnnnnn/1:aaaa/1:hhh/2:yyy/2:dd/2:ff/2:ii/2:rr/E:ee/E:ss"
+```
+
+___
