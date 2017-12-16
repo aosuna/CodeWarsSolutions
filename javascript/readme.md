@@ -322,5 +322,53 @@ s1 = "mmmmm m nnnnn y&friend&Paul has heavy hats! &"
 s2 = "my frie n d Joh n has ma n y ma n y frie n ds n&"
 mix(s1, s2) --> "1:mmmmmm/=:nnnnnn/1:aaaa/1:hhh/2:yyy/2:dd/2:ff/2:ii/2:rr/E:ee/E:ss"
 ```
+___
+
+## Regex Password Validation -- pass-validator.js
+You need to write regex that will validate a password to make sure it meets the following criteria:
+  - At least six characters long
+  - contains a lowercase letter
+  - contains an uppercase letter
+  - contains a number
+
+Valid passwords will only be alphanumeric characters.
 
 ___
+
+## Longest Palindrome -- longest-pal.js
+Find the length of the longest substring in the given string `s` that is the same in reverse.
+
+As an example, if the input was “I like racecars that go fast”, the substring `(racecar)` length would be `7`.
+
+If the length of the input string is 0, return value must be `0`.
+
+Example: 
+```javascript
+"a" -> 1 
+"aab" -> 2  
+"abcde" -> 1
+"zzbaabcd" -> 4
+"" -> 0
+```
+
+___
+
+## Valid Braces -- braces.js
+
+Write a function that takes a string of braces, and determines if the order of the braces is valid. It should return true if the string is valid, and false if it's invalid.
+
+This Kata is similar to the [Valid Parentheses](https://www.codewars.com/kata/valid-parentheses) Kata, but introduces new characters: brackets `[]`, and curly braces `{}`. Thanks to @arnedag for the idea!
+
+All input strings will be nonempty, and will only consist of parentheses, brackets and curly braces: `()[]{}`.
+
+### What is considered Valid?
+A string of braces is considered valid if all braces are matched with the correct brace.
+
+Examples:
+```javascript
+"(){}[]"   =>  True
+"([{}])"   =>  True
+"(}"       =>  False
+"[(])"     =>  False
+"[({})](]" =>  False
+```
